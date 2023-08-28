@@ -7,3 +7,5 @@ Simply move uDWM.dll.bak2 and uDWM.dll.bak3 to the C:\Windows\system32 folder. T
 The script is supposed to work after that. I tested this on my main system, running Windows 10 21H2. I take no responsibility if it doesn't work for you; it is strongly advised to save the uDWM.dll file before any modification.
 
 All credits is to Mexicancatgirl/Dulappy, who modified the uDWM.dll to look similar to Windows 7 and Windows 8.
+
+![cmd_PB1JcW3LLB](https://github.com/OrthodoxWindows/uDWM-DLL-Switcher/assets/100134023/15dbd822-53bc-4ee4-a292-856c1ee20575)
