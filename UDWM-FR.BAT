@@ -46,7 +46,7 @@ CHOICE /C SETA
 if "%errorlevel%"=="1" goto :BWIN7
 if "%errorlevel%"=="2" goto :BWIN8
 if "%errorlevel%"=="3" goto :BWIN10
-if "%errorlevel%"=="4" goto :ABORT
+if "%errorlevel%"=="4" goto :END
 
 :BWIN7
 if exist C:\windows\system32\uDWM.dll.bak (goto :Win7-2) else (goto :B7Win10)
@@ -55,13 +55,13 @@ if exist C:\windows\system32\uDWM.dll.bak2 (goto :B7Win7) else (goto :B7Win8)
 :B7Win10
 ren C:\windows\system32\uDWM.dll uDWM.dll.bak
 ren C:\windows\system32\uDWM.dll.bak3 uDWM.dll
-goto :END
+goto :ENDM
 :B7Win8
 ren C:\windows\system32\uDWM.dll uDWM.dll.bak2
 ren C:\windows\system32\uDWM.dll.bak3 uDWM.dll
-goto :END
+goto :ENDM
 :B7Win7
-goto :END
+goto :ENDWM
 
 :BWIN8
 if exist C:\windows\system32\uDWM.dll.bak (goto :Win8-2) else (goto :B8Win10)
@@ -70,30 +70,34 @@ if exist C:\windows\system32\uDWM.dll.bak2 (goto :B8Win7) else (goto :B8Win8)
 :B8Win10
 ren C:\windows\system32\uDWM.dll uDWM.dll.bak
 ren C:\windows\system32\uDWM.dll.bak2 uDWM.dll
-goto :END
+goto :ENDM
 :B8Win8
-goto :END
+goto :ENDWM
 :B8Win7
 ren C:\windows\system32\uDWM.dll uDWM.dll.bak3
 ren C:\windows\system32\uDWM.dll.bak2 uDWM.dll
-goto :END
+goto :ENDM
 
 :BWIN10
 if exist C:\windows\system32\uDWM.dll.bak (goto :Win10-2) else (goto :B10Win10)
 :Win10-2
 if exist C:\windows\system32\uDWM.dll.bak2 (goto :B10Win7) else (goto :B10Win8)
 :B10Win10
-goto :END
+goto :ENDWM
 :B10Win8
 ren C:\windows\system32\uDWM.dll uDWM.dll.bak2
 ren C:\windows\system32\uDWM.dll.bak uDWM.dll
-goto :END
+goto :ENDM
 :B10Win7
 ren C:\windows\system32\uDWM.dll uDWM.dll.bak3
 ren C:\windows\system32\uDWM.dll.bak uDWM.dll
+goto :ENDM
+
+:ENDM
+TASKKILL /f /im DWM.exe
+goto :END
+
+:ENDWM
 goto :END
 
 :END
-TASKKILL /f /im DWM.exe
-goto :ABORT
-:ABORT
