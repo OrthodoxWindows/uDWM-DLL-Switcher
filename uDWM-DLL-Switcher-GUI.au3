@@ -23,15 +23,15 @@ Func Main()
 								
 						Case $idButton_DWM10
                                 ; Run DWM10 script.
-                                $iPID = Run("C:\BAT\uDWM-Switch\UDWM-Windows10style.BAT", "")
+                                $iPID = Run("UDWM-Win10-style.bat", "")
 								
 						Case $idButton_DWM8
                                 ; Run DWM8 script.
-                                $iPID = Run("C:\BAT\uDWM-Switch\UDWM-Windows8style.BAT", "")
+                                $iPID = Run("UDWM-Win8-style.bat", "")
 				
 			            Case $idButton_DWM7
                                 ; Run DWM7 script.
-                                $iPID = Run("C:\BAT\uDWM-Switch\UDWM-Windows7style.BAT", "")
+                                $iPID = Run("UDWM-Win7-style.bat", "")
 							
 							
                 EndSwitch
